@@ -112,6 +112,9 @@
 			} else {
 				if ( stop === 0 ) {
 					if ( next() === false ) {
+						if ( typeof( settings.callbackFinished ) == 'function' ) {
+							settings.callbackFinished( object );
+						}
 						return;
 					}
 				}
